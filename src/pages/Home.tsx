@@ -1,4 +1,5 @@
 import axios from "axios";
+import { faker } from "@faker-js/faker";
 import TaskCard from "../components/TaskCard";
 import addTaskIcon from "../assets/add_bold.svg";
 import "./Home.css";
@@ -13,7 +14,6 @@ type Todo = {
 
 const Home = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
@@ -35,7 +35,13 @@ const Home = () => {
         </section>
       </section>
       {todos.map((todo) => (
-        <TaskCard key={todo.id} id={todo.id} title={todo.title} completed={todo.completed} />
+        <TaskCard
+          key={todo.id}
+          id={todo.id}
+          title={todo.title}
+          completed={todo.completed}
+          taskDescr={faker.lorem.sentence()}
+        />
       ))}
     </>
   );

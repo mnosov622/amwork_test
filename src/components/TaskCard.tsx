@@ -5,9 +5,10 @@ interface Props {
   id: number;
   title: string;
   completed: boolean;
+  taskDescr: string;
 }
 
-const TaskCard = ({ id, title, completed }: Props) => {
+const TaskCard = ({ id, title, completed, taskDescr }: Props) => {
   return (
     <>
       <div className="card-container">
@@ -24,7 +25,7 @@ const TaskCard = ({ id, title, completed }: Props) => {
             <div className="task_endDate">Oct 01, 02:00 PM</div>
           </section>
           <section className="card_descr">
-            <p className="card_descr_text">Task description with long long long text</p>
+            <p className="card_descr_text">{taskDescr}</p>
           </section>
           <section className="labels">
             <div className="label-purple">Entity title</div>
