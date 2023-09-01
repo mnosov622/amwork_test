@@ -14,14 +14,18 @@ type Todo = {
 
 const Home = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
       .then((response) => {
         setTodos(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
+        setLoading(false);
       });
   }, []);
 
@@ -51,24 +55,28 @@ const Home = () => {
           <div className="tasks_count">{todos && todos.length}</div>
         </section>
       </section>
-      {todos.map((todo) => {
-        // Generate unique tags for each task
-        const tag1 = faker.lorem.word();
-        const tag2 = faker.lorem.word();
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        todos.map((todo) => {
+          // Generate unique tags for each task
+          const tag1 = faker.lorem.word();
+          const tag2 = faker.lorem.word();
 
-        return (
-          <TaskCard
-            key={todo.id}
-            title={todo.title}
-            completed={todo.completed}
-            taskDescr={faker.lorem.sentence()}
-            startDate={generateRandomDate()}
-            endDate={generateRandomDate()}
-            tag1={tag1}
-            tag2={tag2}
-          />
-        );
-      })}
+          return (
+            <TaskCard
+              key={todo.id}
+              title={todo.title}
+              completed={todo.completed}
+              taskDescr={faker.lorem.sentence()}
+              startDate={generateRandomDate()}
+              endDate={generateRandomDate()}
+              tag1={tag1}
+              tag2={tag2}
+            />
+          );
+        })
+      )}
     </>
   );
 };
