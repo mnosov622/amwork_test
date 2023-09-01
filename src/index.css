@@ -23,9 +23,10 @@ code {
   overflow-x: hidden;
 }
 
-.green-bold {
+.day {
   color: #50b810;
   font-weight: 600;
+  font-size: 14px;
 }
 
 .flex {
@@ -38,12 +39,4 @@ code {
 
 .align-center {
   align-items: center;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.flex-row {
-  flex-direction: row;
 }

@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <>
       <section className="flex justify-space-between align-center">
-        <h1 className="green-bold">Today</h1>
+        <h1 className="day">Today</h1>
         <section className="flex">
           <img className="addTaskIcon" src={addTaskIcon} alt="add task" />
           <div className="tasks_count">{todos && todos.length}</div>

@@ -1,6 +1,6 @@
 .card {
   width: 255px;
-  height: 166px;
+  height: 158px;
   box-shadow: 0px 1px 2px 0px #d0daeb;
   background-color: #ffffff;
   border-radius: 7px;
@@ -19,10 +19,6 @@
   width: 263px;
   margin: 0 auto;
   margin-bottom: 8px;
-}
-
-.title-container {
-  display: inline;
 }
 
 .card_title {
@@ -44,6 +40,8 @@
   font-size: 13px;
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 .card_descr {
