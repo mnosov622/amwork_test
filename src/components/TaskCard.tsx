@@ -1,5 +1,6 @@
 import "./TaskCard.css";
 import RectangleIcon from "../assets/rectangle.svg";
+import TaskImage from "../assets/Img.svg";
 
 interface Props {
   title: string;
@@ -21,7 +22,7 @@ const TaskCard = ({ title, completed, taskDescr, startDate, endDate, tag1, tag2 
               <input type="checkbox" defaultChecked={false} />
               <span className="checkbox-icon">{completed ? "✓" : ""}</span>
             </label>
-            <p className="card_title"> {title}</p>
+            <span className="card_title"> {title}</span>
           </section>
           <section className="card_date">
             <div className="task_startDate">{startDate}</div>
@@ -36,6 +37,9 @@ const TaskCard = ({ title, completed, taskDescr, startDate, endDate, tag1, tag2 
               <span>{tag2}</span>
               <img className="rectangle" src={RectangleIcon} alt="rectangle" />
             </div>
+          </section>
+          <section className="card_image">
+            <img className="task_image" src={TaskImage} width={24} height={24} alt="task" />
           </section>
         </main>
       </div>

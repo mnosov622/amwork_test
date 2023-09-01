@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .card-container {
@@ -20,17 +21,19 @@
   margin-bottom: 8px;
 }
 
+.title-container {
+  display: inline;
+}
+
 .card_title {
   font-size: 14px;
   font-weight: 600;
-  text-align: left;
   margin-top: 0;
   margin-left: 8px;
   color: #3d8fec;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  max-height: calc(18px * 3);
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -110,4 +113,10 @@
 .rectangle {
   position: absolute;
   top: 0;
+}
+
+.task_image {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
 }
