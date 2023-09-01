@@ -60,23 +60,11 @@
   height: 16px;
   border-radius: 4px;
   border: 1px solid #aabbcc;
+  background: linear-gradient(0deg, #f8fafb, #f8fafb), linear-gradient(0deg, #aab7d4, #aab7d4);
   cursor: pointer;
-  position: relative;
-}
-
-.custom-checkbox .checkbox-icon::before {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-}
-
-/* Gradient background styles */
-.custom-checkbox .checkbox-icon::before,
-.custom-checkbox .checkbox-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkbox-icon {
