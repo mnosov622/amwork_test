@@ -48,7 +48,7 @@ const Home = () => {
         <h1 className="green-bold">Today</h1>
         <section className="flex">
           <img className="addTaskIcon" src={addTaskIcon} alt="add task" />
-          <div className="tasks_count">2</div>
+          <div className="tasks_count">{todos && todos.length}</div>
         </section>
       </section>
       {todos.map((todo) => (

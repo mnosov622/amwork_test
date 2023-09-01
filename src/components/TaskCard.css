@@ -11,15 +11,11 @@
 }
 
 .card-container {
-  width: 263px;
-  height: 166px;
   background-color: #f4f8ff;
   padding: 4px;
   border-radius: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 8px;
+  width: 263px;
 }
 
 .card_title {

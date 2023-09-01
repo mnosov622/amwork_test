@@ -16,8 +16,11 @@ code {
 }
 
 .container {
-  width: 263px;
+  width: 283px;
   margin: 0 auto;
+  height: 716px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .green-bold {
