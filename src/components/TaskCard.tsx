@@ -7,9 +7,11 @@ interface Props {
   taskDescr: string;
   startDate: string;
   endDate: string;
+  tag1: string;
+  tag2: string;
 }
 
-const TaskCard = ({ title, completed, taskDescr, startDate, endDate }: Props) => {
+const TaskCard = ({ title, completed, taskDescr, startDate, endDate, tag1, tag2 }: Props) => {
   return (
     <>
       <div className="card-container">
@@ -29,9 +31,9 @@ const TaskCard = ({ title, completed, taskDescr, startDate, endDate }: Props) =>
             <p className="card_descr_text">{taskDescr}</p>
           </section>
           <section className="labels">
-            <div className="label-purple">Entity title</div>
+            <div className="label-purple">{tag1}</div>
             <div className="label-gray">
-              <span>Front-end</span>
+              <span>{tag2}</span>
               <img className="rectangle" src={RectangleIcon} alt="rectangle" />
             </div>
           </section>

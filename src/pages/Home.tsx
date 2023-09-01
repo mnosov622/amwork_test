@@ -42,6 +42,10 @@ const Home = () => {
     return formattedDate;
   };
 
+  // Generate two random tags using Faker.js
+  const tag1 = faker.lorem.word();
+  const tag2 = faker.lorem.word();
+
   return (
     <>
       <section className="flex justify-space-between align-center">
@@ -59,6 +63,8 @@ const Home = () => {
           taskDescr={faker.lorem.sentence()}
           startDate={generateRandomDate()}
           endDate={generateRandomDate()}
+          tag1={tag1}
+          tag2={tag2}
         />
       ))}
     </>
