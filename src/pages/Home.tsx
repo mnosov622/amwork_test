@@ -14,18 +14,18 @@ type Todo = {
 
 const Home = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true); // Initially set to true while loading
 
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
       .then((response) => {
         setTodos(response.data);
-        setLoading(false);
+        setLoading(false); // Set loading to false once data is fetched
       })
       .catch((error) => {
         console.error("Error:", error);
-        setLoading(false);
+        setLoading(false); // Set loading to false in case of an error
       });
   }, []);
 
