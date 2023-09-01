@@ -70,10 +70,6 @@
   justify-content: center;
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-icon {
-  background: linear-gradient(0deg, #aabbcc, #aabbcc);
-}
-
 .card_descr_text {
   margin-top: 4px;
   white-space: nowrap;
