@@ -27,10 +27,10 @@ const Home = () => {
 
   // Function to generate a random date in the specified format
   const generateRandomDate = () => {
-    const randomDate = faker.date.between(
-      new Date(),
-      new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
-    );
+    const randomDate = faker.date.between({
+      from: new Date(),
+      to: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+    });
     const month = randomDate.toLocaleString("default", { month: "short" });
     const day = randomDate.getDate();
     const hour = randomDate.getHours();
