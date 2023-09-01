@@ -2,13 +2,14 @@ import "./TaskCard.css";
 import RectangleIcon from "../assets/rectangle.svg";
 
 interface Props {
-  id: number;
   title: string;
   completed: boolean;
   taskDescr: string;
+  startDate: string;
+  endDate: string;
 }
 
-const TaskCard = ({ id, title, completed, taskDescr }: Props) => {
+const TaskCard = ({ title, completed, taskDescr, startDate, endDate }: Props) => {
   return (
     <>
       <div className="card-container">
@@ -21,8 +22,8 @@ const TaskCard = ({ id, title, completed, taskDescr }: Props) => {
             <p className="card_title"> {title}</p>
           </div>
           <section className="card_date">
-            <div className="task_startDate">Oct 12, 01:00 PM</div>
-            <div className="task_endDate">Oct 01, 02:00 PM</div>
+            <div className="task_startDate">{startDate}</div>
+            <div className="task_endDate">{endDate}</div>
           </section>
           <section className="card_descr">
             <p className="card_descr_text">{taskDescr}</p>

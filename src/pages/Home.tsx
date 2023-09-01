@@ -25,6 +25,23 @@ const Home = () => {
       });
   }, []);
 
+  // Function to generate a random date in the specified format
+  const generateRandomDate = () => {
+    const randomDate = faker.date.between(
+      new Date(),
+      new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
+    );
+    const month = randomDate.toLocaleString("default", { month: "short" });
+    const day = randomDate.getDate();
+    const hour = randomDate.getHours();
+    const minute = randomDate.getMinutes();
+    const amOrPm = hour >= 12 ? "PM" : "AM";
+    const formattedDate = `${month} ${day}, ${hour % 12}:${minute
+      .toString()
+      .padStart(2, "0")} ${amOrPm}`;
+    return formattedDate;
+  };
+
   return (
     <>
       <section className="flex justify-space-between align-center">
@@ -37,10 +54,11 @@ const Home = () => {
       {todos.map((todo) => (
         <TaskCard
           key={todo.id}
-          id={todo.id}
           title={todo.title}
           completed={todo.completed}
           taskDescr={faker.lorem.sentence()}
+          startDate={generateRandomDate()}
+          endDate={generateRandomDate()}
         />
       ))}
     </>
