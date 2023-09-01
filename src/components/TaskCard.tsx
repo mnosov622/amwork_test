@@ -16,13 +16,13 @@ const TaskCard = ({ title, completed, taskDescr, startDate, endDate, tag1, tag2 
     <>
       <div className="card-container">
         <main className="card">
-          <div className="flex">
+          <section className="flex">
             <label className="custom-checkbox">
               <input type="checkbox" checked={false} />
               <span className="checkbox-icon">{completed ? "✓" : ""}</span>
             </label>
             <p className="card_title"> {title}</p>
-          </div>
+          </section>
           <section className="card_date">
             <div className="task_startDate">{startDate}</div>
             <div className="task_endDate">{endDate}</div>

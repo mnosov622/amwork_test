@@ -42,10 +42,6 @@ const Home = () => {
     return formattedDate;
   };
 
-  // Generate two random tags using Faker.js
-  const tag1 = faker.lorem.word();
-  const tag2 = faker.lorem.word();
-
   return (
     <>
       <section className="flex justify-space-between align-center">
@@ -55,18 +51,24 @@ const Home = () => {
           <div className="tasks_count">{todos && todos.length}</div>
         </section>
       </section>
-      {todos.map((todo) => (
-        <TaskCard
-          key={todo.id}
-          title={todo.title}
-          completed={todo.completed}
-          taskDescr={faker.lorem.sentence()}
-          startDate={generateRandomDate()}
-          endDate={generateRandomDate()}
-          tag1={tag1}
-          tag2={tag2}
-        />
-      ))}
+      {todos.map((todo) => {
+        // Generate unique tags for each task
+        const tag1 = faker.lorem.word();
+        const tag2 = faker.lorem.word();
+
+        return (
+          <TaskCard
+            key={todo.id}
+            title={todo.title}
+            completed={todo.completed}
+            taskDescr={faker.lorem.sentence()}
+            startDate={generateRandomDate()}
+            endDate={generateRandomDate()}
+            tag1={tag1}
+            tag2={tag2}
+          />
+        );
+      })}
     </>
   );
 };
