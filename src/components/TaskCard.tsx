@@ -1,8 +1,13 @@
 import "./TaskCard.css";
 import RectangleIcon from "../assets/rectangle.svg";
-const TaskCard = () => {
-  const isChecked = false;
 
+interface Props {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+const TaskCard = ({ id, title, completed }: Props) => {
   return (
     <>
       <div className="card-container">
@@ -10,12 +15,9 @@ const TaskCard = () => {
           <div className="flex">
             <label className="custom-checkbox">
               <input type="checkbox" checked={false} />
-              <span className="checkbox-icon">{isChecked ? "✓" : ""}</span>
+              <span className="checkbox-icon">{completed ? "✓" : ""}</span>
             </label>
-            <p className="card_title">
-              {" "}
-              For the sacke of example we are a building company and we have just closed
-            </p>
+            <p className="card_title"> {title}</p>
           </div>
           <section className="card_date">
             <div className="task_startDate">Oct 12, 01:00 PM</div>
